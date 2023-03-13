@@ -36,3 +36,25 @@ saveBtn.on("click", function(e) {
     localStorage.setItem("hour16", hourSixteenVal);
     localStorage.setItem("hour17", hourSeventeenVal);
 });
+
+init()
+
+var currentHour = moment().hours();
+
+for (var i = 0; i < timeBlock.length; i++) {
+    if (timeBlock[i].dataset.time == currentHour) {
+        timeBlock[i].classList.remove(".past");
+        timeBlock[i].classList.remove(".future");
+        timeBlock[i].classList.add(".present");
+    };
+    if (timeBlock[i].dataset.time > currentHour) {
+        timeBlock[i].classList.remove(".past");
+        timeBlock[i].classList.remove(".present");
+        timeBlock[i].classList.add(".future");
+    };
+    if (timeBlock[i].dataset.time < currentHour) {
+        timeBlock[i].classList.remove(".present");
+        timeBlock[i].classList.remove(".future");
+        timeBlock[i].classList.add(".past");
+    }
+};
