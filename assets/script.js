@@ -1,20 +1,38 @@
+//Display time in header
 var currentTimeDisplay = $('#currentDay');
-currentTimeDisplay.text(moment().format('1111'));
+currentTimeDisplay.text(moment().format('MMMM Do YYYY, h:mm:ss a'));
 
-var hourNine = $('#hour-9');
-var hourTen = $("#hour-10");
-var hourEleven = $("#hour-11");
-var hourTwelve = $("#hour-12");
-var hourThirteen = $("#hour-13");
-var hourFourteen = $("#hour-14");
-var hourFithteen = $("#hour-15");
-var hourSixteen = $('#hour-16');
-var hourSeventeen = $('#hour-17');
+var hourNineText = $('#hour-9');
+var hourTenText = $("#hour-10");
+var hourElevenText = $("#hour-11");
+var hourTwelveText = $("#hour-12");
+var hourThirteenText = $("#hour-13");
+var hourFourteenText = $("#hour-14");
+var hourFithteenText = $("#hour-15");
+var hourSixteenText = $('#hour-16');
+var hourSeventeenText = $('#hour-17');
 
-
+//Create variables for save button to initialize a click event to store textarea value to local storage
 var saveBtn = $(".saveBtn");
 
 
+//On page load, place all items from local storage to pageset
+function init() {
+    hourNineText.text(localStorage.getItem("hour09"));
+    hourTenText.text(localStorage.getItem("hour10"));
+    hourElevenText.text(localStorage.getItem("hour11"));
+    hourTwelveText.text(localStorage.getItem("hour12"));
+    hourThirteenText.text(localStorage.getItem("hour13"));
+    hourFourteenText.text(localStorage.getItem("hour14"));
+    hourFifteenText.text(localStorage.getItem("hour15"));
+    hourSixteenText.text(localStorage.getItem("hour16"));
+    hourSeventeenText.text(localStorage.getItem("hour17"));
+};
+
+
+
+
+//Onclick, save the value of all items to local storage
 saveBtn.on("click", function(e) {
     e.preventDefault();
     hourNineVal = hourNine.val();
@@ -38,7 +56,7 @@ saveBtn.on("click", function(e) {
 });
 
 init()
-
+//Find value for current hour
 var currentHour = moment().hours();
 
 for (var i = 0; i < timeBlock.length; i++) {
