@@ -21,6 +21,6 @@ Previous git pusheshes with modified code.
 The final code used to render this application.
 The second URL will once deployed will showcase the finished live application.
 
-Github URL: https://github.com/aevripidou1996/Week2-Challenge
+Github URL: https://github.com/aevripidou1996/WK5-C
 
-Live Application URL: https://aevripidou1996.github.io/Week2-Challenge/
+Live Application URL: https://aevripidou1996.github.io/WK5-C/
